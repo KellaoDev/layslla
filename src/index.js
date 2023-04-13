@@ -1,5 +1,5 @@
-const {salarioPessoa, quantidadeLitros, escolaMatricula} = require('./array-utils')
+const {salarioPessoa, quantidadeLitros, escolaMatricula, verificaTriangulo, numeroCrescente, notasVestibular, somaAB} = require('./array-utils')
 
 
-const questao02 = escolaMatricula()
+const questao02 = somaAB()
 console.log(questao02)
