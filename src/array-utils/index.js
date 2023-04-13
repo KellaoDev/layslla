@@ -31,17 +31,65 @@ function escolaMatricula(codigo, semestre, ano, ordenacao) {
     console.log(`O ano e o semestre de matrícula está no formato(AASDDD): ` + ano + semestre + ordenacao);
 }
 
+function verificaTriangulo(lado01, lado02, lado03) {
+    lado01 = parseFloat(prompt(`Digite o primeiro lado: `));
+    lado02 = parseFloat(prompt(`Digite o segundo lado: `));
+    lado03 = parseFloat(prompt(`Digite o terceiro lado: `));
+
+    if (lado01 + lado02 > lado03 && lado02 + lado03 > lado01 && lado03 + lado01 > lado02) {
+        if (lado01 === lado02 && lado02 === lado03) {
+            console.log(`O triângulo é Equilátero`);
+        } else if ((lado01 === lado02) || (lado01 === lado03) || (lado02 == lado03)) {
+            console.log(`O triângulo é Isóscele`);
+        } else {
+            console.log(`O triângulo é Escaleno`);
+        }
+    } else {
+        console.log(`Não é um triângulo`);
+    }
+}
+
+function numeroCrescente() {
+    const valores = [120, 12, 2];
+    valores.sort((a, b) => a - b);
+    return valores;
+}
+
+function notasVestibular(port, mat, cg) {
+    port = (prompt(`Digite a nota na disciplina de português: `));
+    mat = (prompt(`Digite a nota na disciplina de matemática: `));
+    cg = (prompt(`Digite a nota na disciplina de conhecimentos gerais: `));
+
+    mediaGeral = (parseFloat(port) + parseFloat(mat) + parseFloat(cg)) / 3;
+
+    console.log(`A sua média geral é: ${mediaGeral.toFixed(2)}`);
+    if (mediaGeral > 7 && port > 5 && mat > 5 && cg > 5) {
+        console.log(`Você foi aprovado`);
+    } else {
+        console.log(`Você foi reprovado`);
+    }
+}
+
+function somaAB(a, b, c) {
+    a = parseFloat(prompt(`Digite o valor de A: `));
+    b = parseFloat(prompt(`Digite o valor de B: `));
+    c = parseFloat(prompt(`Digite o valor de C: `));
+
+    if((a + b) < c) {
+        console.log(`A soma de A com B é menor que C`);
+    } else if ((a + b) > c) {
+        console.log(`A soma de A com B é maior que C`);
+    } else {
+        console.log(`A soma de A com B é igual à C`);
+    }
+}
+
+function 
+
+
 
 module.exports = {
-    salarioPessoa, quantidadeLitros, escolaMatricula
+    salarioPessoa, quantidadeLitros, escolaMatricula, verificaTriangulo, numeroCrescente, notasVestibular, somaAB
 }
 
 
-/*
-
-4. Dados três números, verifique se eles podem representar as medidas dos lados de um triângulo e, se puderem, classificar
-o triângulo em equilátero (3 lados iguais), isósceles (2 lados iguais) ou escaleno (3 lados diferentes).
-Propriedade – o comprimento de cada lado de um triângulo é menor do que a soma dos comprimentos dos outros dois lados.
-• Definição 1 - chama-se de triângulo equilátero o que tem os comprimentos dos três lados iguais;
-• Definição 2 - chama-se de triângulo isóscele o triângulo que tem os comprimentos de dois lados iguais;
-• Definição 3 - chama-se triângulo escaleno o triângulo que tem os comprimentos dos três lados diferentes.*/
